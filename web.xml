@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+  <display-name>Gen</display-name>
+  
+  <welcome-file-list>
+    <welcome-file>billgen.html</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+    <servlet-name>serv1</servlet-name>
+    <servlet-class>com.jspiders.billgen.BillGen</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>serv1</servlet-name>
+    <url-pattern>/S3</url-pattern>
+  </servlet-mapping>
+  
+  <context-param>
+    <param-name>units</param-name>
+    <param-value>0.75</param-value>
+  </context-param>
+  
+  <servlet>
+    <servlet-name>serv2</servlet-name>
+    <servlet-class>com.jspiders.billgen.BillController</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>serv2</servlet-name>
+    <url-pattern>/S2</url-pattern>
+  </servlet-mapping>
+</web-app>
